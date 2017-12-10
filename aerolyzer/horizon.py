@@ -5,7 +5,7 @@ import numpy as np
 from matplotlib import pyplot as plt
 
 def test():
-	print "hi"
+	print("hi")
 def _testAnalyze(self, directory):
 	included_extensions = ['jpg','JPG']
 	files = [fn for fn in os.listdir(directory) if any(fn.endswith(ext) for ext in included_extensions)]
@@ -26,7 +26,7 @@ def getHorizon(self, directory, img_noblur,image):
 	plt.title('Edge Image'), plt.xticks([]), plt.yticks([])
 	plt.show()
 	lines = cv2.HoughLines(edges,1,np.pi/180,10) #magic numbers (min line length)
-	print(str(lines))
+	print((str(lines)))
 	for rho,theta in lines[0]:
 	    if (theta > 5.49  or theta < 0.78) or (theta > 2.35 and theta < 3.92): #limiting angle so that it is not more than 45 deg or less than -45
 		continue
